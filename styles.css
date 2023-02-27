@@ -1,0 +1,65 @@
+/* Webbläsaren tillämpar CSS regler på ett dokument för att påverka hur de visas för användaren. */
+
+/* En regel består av:
+1. En uppsättning properties/egenskaper som har values/värden vilka uppdaterar hur innehållet i HTML visas, 
+   dessa kallas för deklarationsblock.
+2. En selektor, som då “väljer” vilket eller vilka element som du vill tillämpa deklarationsblocket på. 
+   Exempelvis “ Jag vill tillämpa min CSS regel på alla paragraph-element i mitt HTML dokument” */
+
+/* Hur skriver vi CSS? */
+p  {
+    color: red;
+    font-size: 12pt;
+}
+
+/* 
+* p är selektorn
+* Från { till } är själva deklarationsblocket
+* color: red; är en deklaration
+* font-size: 12pt; är ytterligare en deklaration
+* En deklaration består av en property “color eller font-size” och ett value “”red eller 12pt.
+* Ett property skiljs från värdet med ett kolon och flera deklarationer separeras med ett semikolon.
+* Tre sätt att tillämpa CSS i HTML
+    * Externt style sheet - vi laddar CSS från en fil till vår HTML. GÖR SÅHÄR!
+    * Internt style sheet - vi skriver CSS i vårt dokuments head-element. GÖR EJ!
+    * Styling inline - vi skriver VSS inuti vår markup i HTML. GÖR EJ!
+* Cascade I CSS syftar till att regeler som definieras i CSS draperar nedåt beroende på källa. 
+    * 1. Externa
+    * 2. Sid-specifika (interna)
+    * 3. Inline
+
+* Selektorer
+    * Enkla Selektorer - Matchar ett eller flera element baserat på elementtyp, id eller class.
+    * Attributselektorer - Matchar ett eller flera element baserat på deras attribut och attributvärden.
+    * Pseudo-Klasser - Matchar ett eller flera element som existerar i ett visst tillstånd, t.ex. när man hovrar över eller element.
+    * Kombinatorer - Àr inte en egen selektor utan kombinerar flera selektorer för at få väldigt specifika selektioner av element, eller grupper av element.
+    * Multipla Selektorer - Lite som kombinatorer så är dessa inte en egen typ av selektor tan beskriver hur man kan sätta flera selektorer pa samma regel, 
+      separerade med kommatecken, och på så sett applicera en uppsättning av deklarationer på alla element som selektorerna väljer. */
+
+ /* Descendant selector, selects every p in the section*/
+section p {
+    color: green;
+} 
+
+/* Child selector, selects only the children-paragraphs in the section*/
+section > p{
+    color: yellow;
+}
+
+
+
+
+
+
+
+
+
+ /* Descendant selector, selects every p in the section*/
+section p {
+    color: green;
+} 
+
+/* Child selector, selects only the children-paragraphs in the section*/
+section > p{
+    color: yellow;
+}
