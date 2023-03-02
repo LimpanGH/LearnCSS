@@ -1,11 +1,16 @@
 /* Fortsätt här https://www.youtube.com/watch?v=Yvd52i14NLU tid 57:36 */
 
+/* Fakta hämtade från
+https://www.youtube.com/watch?v=Yvd52i14NLU
+
+*/
+
 /* Webbläsaren tillämpar CSS regler på ett dokument för att påverka hur de visas för användaren. */
 
 /* En regel består av:
 1. En uppsättning properties/egenskaper som har values/värden vilka uppdaterar hur innehållet i HTML visas, 
    dessa kallas för deklarationsblock.
-2. En selektor, som då “väljer” vilket eller vilka element som du vill tillämpa deklarationsblocket på. 
+2. En selektor “väljer” vilket eller vilka element som du vill tillämpa deklarationsblocket på. 
    Exempelvis “ Jag vill tillämpa min CSS regel på alla paragraph-element i mitt HTML dokument” */
 
 /* Hur skriver vi CSS? */
@@ -15,7 +20,7 @@ p  {                      /* p är selektorn i detta fallet */
 }                         /* Från { till } är själva deklarationsblocket */
 
 /* 
-* En deklaration består av en property “color eller font-size” och ett value “”red eller 12pt.
+* En deklaration består av en property tex color eller font-size och ett value tex red eller 12pt.
 * Ett property skiljs från värdet med ett kolon och flera deklarationer separeras med ett semikolon.
 * Tre sätt att tillämpa CSS i HTML
     * Externt style sheet - vi laddar CSS från en fil till vår HTML. GÖR SÅHÄR!
@@ -32,7 +37,19 @@ p  {                      /* p är selektorn i detta fallet */
     * Pseudo-Klasser - Matchar ett eller flera element som existerar i ett visst tillstånd, t.ex. när man hovrar över eller element.
     * Kombinatorer - Àr inte en egen selektor utan kombinerar flera selektorer för at få väldigt specifika selektioner av element, eller grupper av element.
     * Multipla Selektorer - Lite som kombinatorer så är dessa inte en egen typ av selektor utan beskriver hur man kan sätta flera selektorer pa samma regel, 
-      separerade med kommatecken, och på så sett applicera en uppsättning av deklarationer på alla element som selektorerna väljer. */
+      separerade med kommatecken, och på så sett applicera en uppsättning av deklarationer på alla element som selektorerna väljer.
+    * Hashtag # används för att selektera en id-selector
+    * Dot-selector . används för att selektera en class-selector   */
+
+/* ID selector (octothorpe) */
+#heading-1 {                    /* Selects the HTML-element with id="heading-1". */
+    color: blue;
+}
+
+/* Class selector */
+.red {                     /* Selects the HTML-element with class of "red". */
+    color: red;
+}
 
  /* Descendant selector, selects every p in the section*/
 section p {
@@ -44,3 +61,15 @@ section > p{
     color: yellow;
 }
 
+---------------------------------------------------------------------
+/* Combinatory Selectors */
+
+ /* Adjacent siblling selector. */
+h2 + p {                                    /* Selects the h2´s first p-sibling*/ 
+    text-transform: uppercase;              /* Transforms the text to uppercase */
+}
+
+ /* General adjacent siblling selector. */
+h2 ~p {                                     /* Selects all the h2´s p-sibling*/ 
+    border: 1px dashed black;             
+}
