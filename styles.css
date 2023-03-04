@@ -1,4 +1,4 @@
-/* Fortsätt här https://www.youtube.com/watch?v=Yvd52i14NLU tid 57:36 */
+/* Fortsätt här https://www.youtube.com/watch?v=Yvd52i14NLU tid 1:24:30 */
 
 /* Fakta hämtade från
 https://www.youtube.com/watch?v=Yvd52i14NLU
@@ -20,7 +20,7 @@ p  {                      /* p är selektorn i detta fallet */
 }                         /* Från { till } är själva deklarationsblocket */
 
 /* 
-* En deklaration består av en property tex color eller font-size och ett value tex red eller 12pt.
+* En deklaration består av en property, tex color eller font-size och ett value, tex red eller 12pt.
 * Ett property skiljs från värdet med ett kolon och flera deklarationer separeras med ett semikolon.
 * Tre sätt att tillämpa CSS i HTML
     * Externt style sheet - vi laddar CSS från en fil till vår HTML. GÖR SÅHÄR!
@@ -41,12 +41,14 @@ p  {                      /* p är selektorn i detta fallet */
     * Hashtag # används för att selektera en id-selector
     * Dot-selector . används för att selektera en class-selector   */
 
-/* ID selector (octothorpe) */
+/* Read more on selectors at https://developer.mozilla.org/en-US/docs/Web/CSS/Attribute_selectors */
+
+/* ID selector (octothorpe) (Räknas som Enkel Selektor för de används så ofta) */
 #heading-1 {                    /* Selects the HTML-element with id="heading-1". */
     color: blue;
 }
 
-/* Class selector */
+/* Class selector (Räknas som Enkel Selektor för de används så ofta) */
 .red {                     /* Selects the HTML-element with class of "red". */
     color: red;
 }
@@ -64,12 +66,49 @@ section > p{
 ---------------------------------------------------------------------
 /* Combinatory Selectors */
 
- /* Adjacent siblling selector. */
+/* Adjacent siblling selector. */
 h2 + p {                                    /* Selects the h2´s first p-sibling*/ 
     text-transform: uppercase;              /* Transforms the text to uppercase */
 }
 
- /* General adjacent siblling selector. */
-h2 ~p {                                     /* Selects all the h2´s p-sibling*/ 
+/* General adjacent siblling selector. */
+h2 ~p {                                     /* Selects all the h2´s p-sibling. Represents elements with an attribute name of attr whose value is a whitespace-separated list of words, one of which is exactly value.*/ 
     border: 1px dashed black;             
 }
+
+---------------------------------------------------------------------
+/* Attribute selectors. */
+
+[data-vegetable] {                          /* To select attributes, we use square-brackets, [], around the attribute. */
+    color: green
+}
+
+/* Attribute equals selector. */
+[data-vegetable="liquid"] {                  /* Here we select an attribute with a specific value, i.e "liquid". */
+    color: red
+}
+
+/* Attribute hyphenated selector */
+[lang="sv-SE"] {                            /* Om man vill välja detta attribut kan man skriva såhär*/
+    color: red
+}
+
+[lang|=sv] {                                /* Med rak pipe använder vi hyphenated selector och då ändras specificiteten i ovanstående exempel till att rikta sig mot alla attribut med bindestreck som har sv före eller efter sig. Represents elements with an attribute name of attr whose value can be exactly value or can begin with value immediately followed by a hyphen, - (U+002D). It is often used for language subcode matches. */
+    color: aquamarine
+}
+
+/* Attribute begins with */
+[data-quantity^="optional"] {               /* Här använder vi ^ för att påverka specificiteten. Represents elements with an attribute name of attr whose value is prefixed (preceded) by value. */
+    opacity: 0.3;
+}
+
+/* Attribute ends with */
+[data-quantity$="kg"] {                     /* Här använder vi $ för att påverka specificiteten. Represents elements with an attribute name of attr whose value is suffixed (followed) by value. */
+    font-weight: bold;
+}
+
+/* Attribute contains  */                   /* Här använder vi * för att påverka specificiteten. Represents elements with an attribute name of attr whose value contains at least one occurrence of value within the string. */
+[data-vegetable*="not spicy"] {
+    text-decoration: underline;
+}}
+

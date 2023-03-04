@@ -5,9 +5,11 @@
         <link rel="stylesheet" href="./test.css">
     </head>
     <body>
+
         <!--<h1 id="heading-1">Hej världen, make me pretty 😃!</h>
         <p class="red">The quick brown fox jumps over the lazy dog.</p> -->
-        <section>
+        
+        <!-- <section>
             <h2>Rubrik 1</h2>
             <p>Mening 1</p>
             <p>Mening 2</p>
@@ -16,6 +18,23 @@
                 <p>Mening 3</p>
                 <p>Mening 4</p>
             </article>
-        </section>
+        </section> -->
+
+    <h2>
+        Ingredienser för recept:
+        <em lang="sv-SE">Fransk Kyckling</em>
+    </h2>
+    <p>Visa <a href="https://www.ica.se/recept/fransk/kyckling/" alt="Länk till recept med fransk kyckling">receptbilder</a></p>
+    <ul>
+        <li data-vegetable data-quantity="1kg">Tomater</li>       <!-- När vi skriver ett attribut med data- framför så kan vi döpa attributet till precis vad vi vill, användbart när vi sedan ska hitta våra custom-attribut med JavaScript -->
+        <li data-vegetable data-quantity="3">Lök</li>
+        <li data-vegetable="not spicy like chili" data-quantity="3">Vitlöksklyftor</li>
+        <li data-vegetable data-quantity="100gr">Gräslök</li>
+        <li data-meat data-quantity="2kg">Kyckling</li>
+        <li data-meat data-quantity="optional 150gr">Baconbitar</li>
+        <li data-vegetable data-quantity="optional 2msk">Olivolja</li>
+        <li data-vegetable="liquid" data-quantity="25cl">Vitt vin (halvtorrt)</li>
+    </ul>
+
     </body>
 </HTML> 
