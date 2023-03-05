@@ -2,7 +2,8 @@
 
 /* Fakta hämtade från
   * https://www.youtube.com/watch?v=Yvd52i14NLU
-  *
+  * https://www.youtube.com/watch?v=YAXotVH2cQM 
+  * 
 */
 
 /* Webbläsaren tillämpar CSS regler på ett dokument för att påverka hur de visas för användaren. */
@@ -132,3 +133,20 @@ p,
 a {
     font-family: Arial, Helvetica, sans-serif;
 }
+---------------------------------------------------------------------
+
+/* CSS Responsiveness */
+
+/* Responsive Web Design (RWD): 
+* En approach för hur man skapar den bästa möjliga visuella upplevelsen oavsett enhetstyp och skärmstorlek 
+* Hjälper utvecklare att få kontroll över hur man anpassar en webbsida för olika visningsscernarion.
+* Man kan testa responsivitet och layout genom att prova sidan på massa olika fysiska enheter eller med webbläsarens inbygda verktyg (inspector i chrome).
+* Skillnade mellan responsiv design och adaptiv design är att den den responsiva varianten ska reagera oavsett vilken bredd webbläsaren är i, medan den adaptiva endast
+  bryr sig om specifika punter.
+* Vi måste använda detta för att vår sida ska kunna visas på alla typer av skärmar.
+* För att få en responsiv sida behöver vi ha med detta i HTMLs head: <meta name="viewport" content="width=device-width,initial-scale=1">
+* 
+
+*/
+
+ 
