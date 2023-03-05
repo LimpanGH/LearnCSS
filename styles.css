@@ -1,8 +1,8 @@
 /* Fortsätt här https://www.youtube.com/watch?v=Yvd52i14NLU tid 1:24:30 */
 
 /* Fakta hämtade från
-https://www.youtube.com/watch?v=Yvd52i14NLU
-
+  * https://www.youtube.com/watch?v=Yvd52i14NLU
+  *
 */
 
 /* Webbläsaren tillämpar CSS regler på ett dokument för att påverka hur de visas för användaren. */
@@ -112,3 +112,23 @@ h2 ~p {                                     /* Selects all the h2´s p-sibling. 
     text-decoration: underline;
 }}
 
+
+/* Pseudo selectors */
+a {                                         /* Here we set the anchor tag to color aquamarine*/
+    color: aquamarine;                   
+}
+a:hover{                                    /* Here we set the anchor tag to change from aquamarine to purple when we hoover on it*/
+    color: purple;
+}
+
+/* Pseudo element*/
+[href^=http]::after {                       /* Här lägger vi till ett element (en enhörning) i HTML-dokumentet. Vi väljer alla href som har ett attribut som börjar med https och väljer att lägga elementet i slutet. Om vill ha det i början så byter vi ordet after mot ordet before*/
+    content: ' 🦄';
+}
+
+/* Multiple selector */                     /* Här väljer vi alla h2, p och a och ändrar deras typsnitt. */
+h2,
+p,
+a {
+    font-family: Arial, Helvetica, sans-serif;
+}
