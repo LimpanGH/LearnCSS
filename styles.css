@@ -3,6 +3,7 @@
 /* Fakta hämtade från
   * https://www.youtube.com/watch?v=Yvd52i14NLU
   * https://www.youtube.com/watch?v=YAXotVH2cQM 
+    https://www.youtube.com/watch?v=9hXxGMJ2opw
   * 
 */
 
@@ -145,8 +146,85 @@ a {
   bryr sig om specifika punter.
 * Vi måste använda detta för att vår sida ska kunna visas på alla typer av skärmar.
 * För att få en responsiv sida behöver vi ha med detta i HTMLs head: <meta name="viewport" content="width=device-width,initial-scale=1">
-* 
-
+* Här är några sidor där vi kan visualisera responsivitet: 
+  https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/layout-shifter.html eller 
+  https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/column-drop.html 
+  https://googlesamples.github.io/web-fundamentals/fundamentals/design-and-ux/responsive/off-canvas.html 
 */
 
- 
+ /* Media queries */ 
+ @media only screen and (max-width: 400px) {    /* Här skriver vi att när två kriterier uppfylls: alla enheter som har skärmar OCH som har max-width 400px, då ska denna CSS kod appliceras på hemsidan. */
+    body {background-color: red;
+ }
+}
+
+---------------------------------------------------------------------
+/* Positionering */
+
+/* Här kan man se i slow motion hur en webbläsare tolkar och läser in html och css i slow motion 
+https://www.youtube.com/watch?v=ZTnIxIA5KGw  */
+
+/* CSS Boxmodel. Alla element kommer få egenskaper utifrån boxmodel.
+  * Margin - Lägger till mellanrum utanför boxen, trycker bort andra boxar.
+  * Border - Lägger en ram runt elementet som vi definierar regeln för.
+  * Padding - Lägger till mellanrum inuti boxen, trycker bort innehållet från kanten på boxen, (bakgrundsfärgen syns i padding). 
+  * Content 
+
+  * Eftersom boxar har fyra sidor så finns där fyra typer av både margin och padding: 
+    * Margin: margin-top, margin-right, margin-bottom, margin-left
+    * Padding: padding-top, padding-right, padding-bottom, padding-left
+*/
+
+  article > header {                    /* Man kan skriva såhär. */
+    margin-top: 10px;  
+    margin-right: 12px;  
+    margin-bottom: 10px;  
+    margin-left: 12px;
+    
+    padding-top 5px;
+    padding-right 6px;
+    padding-bottom 5px;
+    padding-left 6px;
+  }
+
+  article > header {                    /* Men det är cleanare och snabbare att skriva med shorthands (enligt klockan) */
+    margin: 10px 12px 10px 12px;        /* top, right, bottom, left*/
+    padding: 5px 6px 5px 6px;           /* top, right, bottom, left*/
+  }
+
+  article > header {                    /* Om sidorna är lika långa och över/under är lika långa kan vi korta ner det ännu mer. */
+    margin: 10px 12px;                  /* top and bottom, right and left. */
+    padding: 5px 6px;                   /* top and bottom, right and left. */
+  }
+
+  /* Vertical margin collapse */
+  p {                                   /* I detta exempel kan man tro att avståndet mellan två paragrafer ska vara högre än 40. Men CSS fungerar så att den mindre margin äts upp av den större, kolapsar in i den större. */
+    color: white;
+    background: gray;
+    padding: 20px 0 20px 10px;
+    margin-top: 10px
+    margin-bottom: 40px;                /* Det är altså bara denna margin som kommer gälla*/
+  }
+
+/* Border skriv såhär: border:<storlek><typ><färg>. */
+
+/* Exempel: */
+ p {
+    border: 2px solid black;
+ }
+
+  /* Precis som med margin och padding kan vi nyttja top, right, left och bottom för att ha olika border colors. */
+  p {
+    border-top: 1px solid black
+    border-right: 1px solid red;
+    border-bottom: 1px solid blue;
+    border-left: 1px solid green;
+  }
+
+
+
+
+* Margin edge
+* Border edge
+* Padding edge
+* Content edge
