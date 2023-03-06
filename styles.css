@@ -1,4 +1,4 @@
-/* Fortsätt här https://www.youtube.com/watch?v=Yvd52i14NLU tid 1:24:30 */
+/* Fortsätt här https://www.youtube.com/watch?v=9hXxGMJ2opw tid 32:18 */
 
 /* Fakta hämtade från
   * https://www.youtube.com/watch?v=Yvd52i14NLU  HTML & CSS
@@ -222,6 +222,35 @@ https://www.youtube.com/watch?v=ZTnIxIA5KGw  */
     border-left: 1px solid green;
   }
 
+ /* Box-sizing. Hur räknas storlek ut på boxar? Borde väl vara egenskaperna width och height?
+ Vi kan få storlek på delarna i boxen att bli bestämda mått utan att bråka med varandra genom att i head lägga till: */
+ * {
+  box-sizing: border-box;
+ }
+/* För att undvika huvudvärk, använd border-box. */
+
+/* Det är en god praxis att resetta förinställda margin och padding: */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+ }
+
+ /* Det finns två typer av boxar, block och inline 
+   * Blockelement
+     * Tar upp en hel rad, nya block på ny rad
+     * De tar bara upp hela bredden av sin förälder
+     * De får sin höjd baserad på sitt innehåll
+  * Inline-element
+    * Används inte för layout, utan för att ge styling till element inuti block-element
+    * De tillåter andra element att lägga sig brevid dem på samma rad
+    * Dess bredd baseras på dess innehåll, inte bredden på sin förälder
+  
+ * Vi kan med CSS säga till ett blockelement att det ska bete sig som ett inline-element och vice versa med hjälp av egenskapen display.
+
+ */
+
+
 
 
 
@@ -230,10 +259,7 @@ https://www.youtube.com/watch?v=ZTnIxIA5KGw  */
 * Padding edge
 * Content edge
 
-https://codepen.io/LimpanGH/pen/abayOyE
 
-https://www.youtube.com/watch?v=9hXxGMJ2opw 20:21
 
-https://docs.emmet.io/cheat-sheet/
-
+kolla denna sen 
 https://www.youtube.com/watch?v=3uMJimaduiQ
