@@ -1,4 +1,4 @@
-/* Fortsätt här https://www.youtube.com/watch?v=9hXxGMJ2opw tid 32:18 */
+/* Fortsätt här tid : */
 
 /* Fakta hämtade från
   * https://www.youtube.com/watch?v=Yvd52i14NLU  HTML & CSS
@@ -247,10 +247,129 @@ https://www.youtube.com/watch?v=ZTnIxIA5KGw  */
     * Dess bredd baseras på dess innehåll, inte bredden på sin förälder
   
  * Vi kan med CSS säga till ett blockelement att det ska bete sig som ett inline-element och vice versa med hjälp av egenskapen display.
+   Om vi så skriver: */
+   /* HTML */
+   <h1>En rubrik som ärett blockelement</h1>
+   <p>Ett paragraf-element som också är ett block-element <em>men</em> har ett inline-element som är &lt;em&gt;</p>     /* &lt;em&gt; är ett sätt att visa html kod i webbläsaren, så det som syns är: <em> */
+   /* CSS */
+   h1, p {                              /* multiple selector*/
+    background-color: papayawhip;
+   }
+   em {
+    background-color: green;
+   }
+   /* Så kommer webbläsaren visa: */
+   Ett paragraf-element som också är ett block-element men har ett inline-element som är <em>       /* "men" kommer att visas med grön färg*/
+   /* Om vi då skriver såhär: */
+   em {
+    display: block;
+    background-color: green;
+   }
+   /* Så kommer "men" att hoppa ut till en egen rad:  */
+   Ett paragraf-element som också är ett block-element
+   men                                                      /* Hela denna rad kommer vara grön. */
+   har ett inline-element som är <em>
+   /* Och om vi skriver såhär: */
+   h1, p {
+    display: inline;
+   background-color: papayawhip;
+   }
+   /* Så kommer paragrafen hoppa upp till h1: */
+   En rubrik som ärett blockelement Ett paragraf-element som också är ett block-element men har ett inline-element som är <em>
 
- */
+   /* Sen har vi hybriden inline-block.
+      Ett inline block placeras inline (i.e. samma rad som det andra innehållet) men beter sig om ett block, andvänds för att få text att flöda runt bilder  
+      Ett exempel är en horisontell navigationsmeny */
+    <nav>                                             /* nav är ett display-block*/
+      <ul>                                            /* ul är ett list-item, men eftersom ul är ett barn till nav så kommer ul bete sig som ett display-block */
+        <li><a href="#">Dinosaurs</a></li>
+        <li><a href="#">Meat-eaters</a></li>
+        <li><a href="#">Plant-eaters</a></li>
+      </ul>
+    </nav>
+    /* Om jag nu vill att alla länkar ska synas på samma rad istället för en lista så skriver jag såhär i CSS:  */
+    ul > li { 
+        display: inline-block;
+      }
+    /* Och vill jag att de ska ha lite mellanrum samt bli underlined när vi hovrar så skriver jag:  */
+    ul > li {
+        display: inline-block;
+        padding: 10px 12px
+      }
+      ul > li > a {
+        text-decoration: none;
+      }
+      
+      ul > li > a:hover {
+        text-decoration: underline;
+      }
+    /* För att snygga till det med centrerat, vit text och nolla förinställda padding/margin/box-sizing så skriver jag såhär:  */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      ul {
+        background: green;
+        text-align: center;
+      }
+      
+      ul > li {
+        display: inline-block;
+        padding: 10px 12px
+      }
+      
+      ul > li > a {
+        text-decoration: none;
+        color: white;  
+      }
+      
+      ul > li > a:hover {
+        text-decoration: underline;
+      }
 
+      /* Exempel på block-element inuti en section */
+      <main>
+        <section>
+          <h2>Dinosaurs</h2>
+          <div class="boxy"></div>
+        </section>
+     </main>  
 
+     main {
+        margin: 10px;
+      }
+      section {
+        background-color: blue;
+      }
+      section > h2 {
+        color: white;
+        text-align: center;
+      }  
+      section > .boxy {
+        margin-left: auto;              /* m-l auto och m-r auto gör att den gula boxen centreras, kan förkortas med bara "margin: 0 auto;" */
+        margin-right: auto;
+        height: 100px;
+        width: 250px;
+        background-color: yellow;
+      }
+
+/* Floats. Boxar kan även bete sig mellan varandra med något som kallas för floats i CSS.  
+   Vi använder floats i CSS för att ändra den horisontella positionen av ett element. 
+   De två mest logiska är:
+   * float-left
+   * float-right */
+/* Exempel.  */
+sidebar {
+    float: left;        /* Floats your sidebar to the left. */
+    height: 300px;
+    width: 100px;
+    background-color: red;
+}
+    
+
+       
 
 
 
